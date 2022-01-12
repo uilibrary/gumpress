@@ -1,0 +1,7 @@
+form.cart .quantity,
+form.cart input[name="quantity"],
+form.cart button[type="submit"].button,
+form.cart select[name="attribute_versions"],
+form.cart table.variations {
+    display: none;
+}

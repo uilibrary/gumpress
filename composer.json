@@ -1,0 +1,16 @@
+{
+    "name": "uilib/gumpress",
+    "description": "",
+    "type": "wordpress-plugin",
+    "license": "GPLv2",
+    "authors": [
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "UIlib\\Gumpress\\": "includes/"
+        },
+        "files": ["includes/functions.php"]
+    }
+}
