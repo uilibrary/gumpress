@@ -12,7 +12,7 @@
  */
 
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
     exit;
 }
 
@@ -21,7 +21,8 @@ require_once __DIR__ . '/vendor/autoload.php';
 /**
  * The main plugin class
  */
-final class Gumpress {
+final class Gumpress
+{
 
     /**
      * Plugin version
@@ -33,12 +34,13 @@ final class Gumpress {
     /**
      * Class construcotr
      */
-    private function __construct() {
+    private function __construct()
+    {
         $this->define_constants();
 
-        register_activation_hook( __FILE__, [ $this, 'activate' ] );
+        register_activation_hook(__FILE__, [$this, 'activate']);
 
-        add_action( 'plugins_loaded', [ $this, 'init_plugin' ] );
+        add_action('plugins_loaded', [$this, 'init_plugin']);
     }
 
     /**
@@ -46,10 +48,11 @@ final class Gumpress {
      *
      * @return \Gumpress
      */
-    public static function init() {
+    public static function init()
+    {
         static $instance = false;
 
-        if ( ! $instance ) {
+        if (!$instance) {
             $instance = new self();
         }
 
@@ -61,12 +64,13 @@ final class Gumpress {
      *
      * @return void
      */
-    public function define_constants() {
-        define( 'UL_GUMPRESS_VERSION', self::version );
-        define( 'UL_GUMPRESS_FILE', __FILE__ );
-        define( 'UL_GUMPRESS_PATH', __DIR__ );
-        define( 'UL_GUMPRESS_URL', plugins_url( '', UL_GUMPRESS_FILE ) );
-        define( 'UL_GUMPRESS_ASSETS', UL_GUMPRESS_URL . '/assets' );
+    public function define_constants()
+    {
+        define('UL_GUMPRESS_VERSION', self::version);
+        define('UL_GUMPRESS_FILE', __FILE__);
+        define('UL_GUMPRESS_PATH', __DIR__);
+        define('UL_GUMPRESS_URL', plugins_url('', UL_GUMPRESS_FILE));
+        define('UL_GUMPRESS_ASSETS', UL_GUMPRESS_URL . '/assets');
     }
 
     /**
@@ -74,17 +78,17 @@ final class Gumpress {
      *
      * @return void
      */
-    public function init_plugin() {
-        
+    public function init_plugin()
+    {
+
         new UIlib\Gumpress\Assets();
 
-        if ( is_admin() ) {
+        if (is_admin()) {
             new \UIlib\Gumpress\Admin();
         } else {
             // wp_die(';fjdlskfl');
             new \UIlib\Gumpress\Frontend();
         }
-
     }
 
     /**
@@ -92,7 +96,8 @@ final class Gumpress {
      *
      * @return void
      */
-    public function activate() {
+    public function activate()
+    {
         $installer = new \UIlib\Gumpress\Installer();
         $installer->run();
     }
@@ -103,9 +108,11 @@ final class Gumpress {
  *
  * @return \Gumpress
  */
-function gumpress() {
+function gumpress()
+{
     return Gumpress::init();
 }
 
 // kick-off the plugin
 gumpress();
+

@@ -20,7 +20,7 @@ class Admin {
 
     /**
      * Dispatch and bind actions
-     *
+     * @param object $settings | Instance of Settings
      * @return void
      */
     public function dispatch_actions($settings) {

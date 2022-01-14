@@ -105,7 +105,7 @@ class Settings
                 ]);
 
                 // RELATIONSHIP EXITS BUT WOO PRODUCT DOES NOT EXISTS
-            } else if ($gumroad_relationship && !$woo_product_exists) {
+            } elseif ($gumroad_relationship && !$woo_product_exists) {
 
                 // CREATE WOO PRODUCT
                 $woo_product_id = $product->create_product($gumroad_product);

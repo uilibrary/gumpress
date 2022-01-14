@@ -8,27 +8,36 @@ class Gumroad
     /**
      * Initialize the class
      */
-    function __construct()
+    public function __construct()
     {
     }
 
-    public function getTokenizedurl($resource_url)
+    public function get_tokenized_url($resource_url)
     {
         $api_url = "https://api.gumroad.com/v2";
-        $token = 'kqkBGQ_Tr3gJiupfgLoBgAJcMmfrR-npSl700ngzJNA';
+        $token = get_option('gumroad_http_token');
         return $api_url . $resource_url . '?access_token=' . $token;
     }
 
     public function get_resource($resource_url)
     {
-        $response = wp_remote_get($this->getTokenizedurl($resource_url));
-        $body     = wp_remote_retrieve_body($response);
-        // wp_die(json_decode($body, true));
+        $response = wp_remote_get($this->get_tokenized_url($resource_url));
+        $status_code = wp_remote_retrieve_response_code($response);
 
-        if (!is_wp_error($response)) { //decode and return
+        // var_dump($status_code);
+
+        $body = wp_remote_retrieve_body($response);
+
+        if (!is_wp_error($response) && $status_code === 200) {
             return json_decode($body, true);
+        } elseif($status_code === 401) {
+            return wp_die('<div class="notice notice-error">
+                <p>Invalid token!</p>
+            </div>');
         } else {
-            return wp_die('Can not get gumroad product');
+            return wp_die('<div class="notice notice-error">
+                <p>Error while getting data from Gumroad!</p>
+            </div>');
         }
     }
 
