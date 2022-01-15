@@ -19,6 +19,7 @@ class Installer {
 
     /**
      * Add time and version on DB
+     * @return void
      */
     public function add_version() {
         $installed = get_option( 'uilib_gumpress_installed' );
@@ -32,7 +33,7 @@ class Installer {
 
     /**
      * Create necessary database tables
-     * 
+     *
      * @return void
      */
     public function create_tables() {

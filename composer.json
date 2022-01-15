@@ -13,7 +13,6 @@
         "files": ["includes/functions.php"]
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "4.0.x-dev",
-        "dealerdirect/phpcodesniffer-composer-installer": "dev-master"
+        
     }
 }

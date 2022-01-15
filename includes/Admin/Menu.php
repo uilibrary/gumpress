@@ -22,12 +22,12 @@ class Menu {
      * @return void
      */
     public function admin_menu() {
-        
+
         $parent_slug = 'uilib-gumpress';
         $capability = 'manage_options';
 
         add_menu_page( __( 'Gumpress', 'gumpress' ), __( 'Gumpress', 'gumpress' ), $capability, $parent_slug, [ $this->settings, 'settings_page' ], 'dashicons-vault' );
     }
 
-    
+
 }

@@ -3,14 +3,13 @@
 /**
  * Plugin Name: gumpress
  * Description: Connect gumroad to woocommerce
- * Plugin URI: 
+ * Plugin URI:
  * Author: UI Lib
- * Author URI: 
- * Version: 
+ * Author URI:
+ * Version:
  * License: GPL2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
-
 
 if (!defined('ABSPATH')) {
     exit;
@@ -21,13 +20,12 @@ require_once __DIR__ . '/vendor/autoload.php';
 /**
  * The main plugin class
  */
-final class Gumpress
-{
+final class Gumpress {
 
     /**
      * Plugin version
      *
-     * @var string
+    * @var string
      */
     const version = '1.0';
 
@@ -48,8 +46,7 @@ final class Gumpress
      *
      * @return \Gumpress
      */
-    public static function init()
-    {
+    public static function init() {
         static $instance = false;
 
         if (!$instance) {
@@ -64,8 +61,7 @@ final class Gumpress
      *
      * @return void
      */
-    public function define_constants()
-    {
+    public function define_constants() {
         define('UL_GUMPRESS_VERSION', self::version);
         define('UL_GUMPRESS_FILE', __FILE__);
         define('UL_GUMPRESS_PATH', __DIR__);
@@ -78,8 +74,7 @@ final class Gumpress
      *
      * @return void
      */
-    public function init_plugin()
-    {
+    public function init_plugin() {
 
         new UIlib\Gumpress\Assets();
 
@@ -96,8 +91,7 @@ final class Gumpress
      *
      * @return void
      */
-    public function activate()
-    {
+    public function activate() {
         $installer = new \UIlib\Gumpress\Installer();
         $installer->run();
     }
@@ -108,11 +102,9 @@ final class Gumpress
  *
  * @return \Gumpress
  */
-function gumpress()
-{
+function gumpress() {
     return Gumpress::init();
 }
 
-// kick-off the plugin
 gumpress();
 

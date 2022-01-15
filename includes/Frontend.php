@@ -5,14 +5,12 @@ namespace UIlib\Gumpress;
 /**
  * The Frontend class
  */
-class Frontend
-{
+class Frontend {
 
     /**
      * Initialize the class
      */
-    function __construct()
-    {
+    function __construct() {
         add_filter( 'woocommerce_loop_add_to_cart_link', [$this, 'modify_add_to_cart_button'], 10, 2 );
         add_filter( 'woocommerce_before_add_to_cart_button', [$this, 'woocommerce_before_add_to_cart_button_callback'], 10, 0 );
     }
@@ -34,8 +32,7 @@ class Frontend
      * @param object $product
      * @return void
      */
-    public function modify_add_to_cart_button($quantity, $product)
-    {
+    public function modify_add_to_cart_button($quantity, $product) {
         $url = get_post_meta($product->id, 'gumroad_product_url', true);
         return "<a href='$url' class='gumpress-button button product_type_variable add_to_cart_button'>Buy now</a>";
     }
