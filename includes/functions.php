@@ -6,6 +6,17 @@ function dd( $data ) {
     die();
 }
 
+if ( ! function_exists( 'is_woocommerce_activated' ) ) {
+    /**
+     * Check is woocommerce installed and activated
+     *
+     * @return boolean
+     */
+	function is_woocommerce_activated() {
+		if ( class_exists( 'woocommerce' ) ) { return true; } else { return false; }
+	}
+}
+
 /**
  * Insert/Update a row of relationship of gumroad and woocommerce products
  *

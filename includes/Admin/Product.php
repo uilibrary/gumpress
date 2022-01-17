@@ -5,8 +5,7 @@ namespace UIlib\Gumpress\Admin;
 /**
  * The Menu handler class
  */
-class Product
-{
+class Product {
 
 	/**
 	 * Initialize the class

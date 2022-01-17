@@ -26,7 +26,7 @@ class Menu {
         $parent_slug = 'uilib-gumpress';
         $capability = 'manage_options';
 
-        add_menu_page( __( 'Gumpress', 'gumpress' ), __( 'Gumpress', 'gumpress' ), $capability, $parent_slug, [ $this->settings, 'settings_page' ], 'dashicons-vault' );
+        add_menu_page( __( 'Gumpress', 'gumpress' ), __( 'Gumpress', 'gumpress' ), $capability, $parent_slug, [ $this->settings, 'settings_page' ], UL_GUMPRESS_ASSETS . '/images/gumpress.svg', 58 );
     }
 
 

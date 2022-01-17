@@ -11,8 +11,5 @@
             "UIlib\\Gumpress\\": "includes/"
         },
         "files": ["includes/functions.php"]
-    },
-    "require-dev": {
-        
     }
 }

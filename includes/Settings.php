@@ -15,6 +15,14 @@ class Settings {
      * Render settings page
      */
     public function settings_page() {
+        if ( ! is_woocommerce_activated() ) {
+            $message = __('Please install and activate Woocommerce first.', 'uilib-gumpress');
+            echo "<div class='notice notice-error'>
+                <p>{$message}</p>
+            </div>";
+            return;
+        }
+
         include __DIR__ . '/Admin/views/settings.php';
 
         $action = isset( $_GET['action'] );
@@ -139,7 +147,12 @@ class Settings {
                         'variants'      => $variants,
                     ], true);
                 }
+            }
 
+            echo "<p> {$gumroad_product['name']} - <span style='color: var(--wc-highlight)'>updated!</span></p>";
+            if ( $key === array_key_last( $product_list ) ) {
+                $admin_products_page = admin_url('edit.php?post_type=product');
+                echo "<p>Done! Check out <a href='{$admin_products_page}'>product page</a></p>";
             }
         }
     }

@@ -1,14 +1,15 @@
 <?php
 
 /**
- * Plugin Name: gumpress
- * Description: Connect gumroad to woocommerce
- * Plugin URI:
+ * Plugin Name: Gumpress
+ * Description: Sell Gumroad product on WooCommerce
+ * Plugin URI: https://ui-lib.com/gumpress
  * Author: UI Lib
- * Author URI:
- * Version:
+ * Author URI: https://ui-lib.com
+ * Version: 1.0.0
  * License: GPL2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: uilib-gumpress
  */
 
 if (!defined('ABSPATH')) {
