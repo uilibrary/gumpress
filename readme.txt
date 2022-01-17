@@ -12,7 +12,7 @@ Sync and checkout with Gumroad.
 
 == Description ==
 
-Import and sync your Gumroad products with your woocommerce products.
+Import and sync your Gumroad products with your woocommerce.
 This plugin also integrates gumroad checkout. Works with any woocommerce theme.
 
 == Changelog ==
