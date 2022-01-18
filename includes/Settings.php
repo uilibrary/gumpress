@@ -79,6 +79,7 @@ class Settings {
         foreach ( $product_list as $key => $gumroad_product ) {
             $variants            = [];
             $is_variable_product = $gumroad_product['variants'][0] ? true : false;
+            $is_updated = false;
 
             if($is_variable_product) {
                 $variants = $gumroad_product['variants'][0]['options'];
@@ -140,19 +141,24 @@ class Settings {
                     $gumroad_product
                 );
 
-                // Update PRODUCT VARIATIONS
+                // UPDATE PRODUCT VARIATIONS
                 if($is_variable_product) {
                     ul_create_product_variation( $woo_product_id, [
                         'base_price'    => $gumroad_product['price'],
                         'variants'      => $variants,
                     ], true);
                 }
+                $is_updated = true;
             }
 
-            echo "<p> {$gumroad_product['name']} - <span style='color: var(--wc-highlight)'>updated!</span></p>";
+            // SHOW UPDATED/IMPORTED MESSAGE
+            $update_message = $is_updated ? __('Updated', 'uilib-gumpress') : __('Imported', 'uilib-gumpress');
+            echo wp_sprintf('<p> %s - <span style="color: var(--wc-highlight)">%s</span></p>', esc_html($gumroad_product['name']), $update_message);
+
+            // SHOW PRODUCTS PAGE LINK
             if ( $key === array_key_last( $product_list ) ) {
                 $admin_products_page = admin_url('edit.php?post_type=product');
-                echo "<p>Done! Check out <a href='{$admin_products_page}'>product page</a></p>";
+                echo wp_sprintf('<p>Done! Check out <a href="%s">%s</a></p>', esc_url($admin_products_page), __('Products page', 'uilib-gumpress'));
             }
         }
     }

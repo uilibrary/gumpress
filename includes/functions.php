@@ -127,12 +127,12 @@ function ul_create_product_attributes( $product_id, $attribute_name, $variants )
     }
 
     $attribute_data = array( $attribute_name => array(
-        "name" => $attribute_name,
-        'value' => $attribute_value,
-        'position' => 0,
-        'is_visible' => 1,
-        'is_variation' => 1,
-        'is_taxonomy' => 0,
+        "name"          => $attribute_name,
+        'value'         => $attribute_value,
+        'position'      => 0,
+        'is_visible'    => 1,
+        'is_variation'  => 1,
+        'is_taxonomy'   => 0,
     ) );
 
     return update_post_meta( $product_id, '_product_attributes', $attribute_data );
