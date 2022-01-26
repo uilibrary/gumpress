@@ -3,7 +3,7 @@ Contributors: uilib
 Tags: gumroad, gumroad store, gumroad checkout, woocommerce
 Requires at least: 4.7
 Tested up to: 5.8
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -20,6 +20,9 @@ When you want to update your gumroad product (product thumbnail, description, pr
 
 Gumpress also syncs your gumroad product versions with your woocommerce variable product.
 Customers will see a price range on your woocommerce single product page and shop page as a result.
+
+## Works with any Woocommerce theme
+You can use any woocommerce theme to build your gumroad store.
 
 ## Works with woocommerce shortcodes
 To display your products, you can use woocommerce short codes or simply a "Buy now" button.
@@ -43,7 +46,14 @@ to Gumroad.
 
 [Bug Report](https://github.com/uilibrary/gumpress/issues) | [Support](mailto:support@ui-lib.com)
 
+== Screenshots ==
+1. Gumpress settings and Sync product
+2. Woocommerce theme connected to gumroad
+
 == Changelog ==
 
-= 1.0 =
+= 1.0.0 =
 * Initial release
+
+= 1.0.1 =
+* removed function array_key_last

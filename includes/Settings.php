@@ -156,7 +156,9 @@ class Settings {
             echo wp_sprintf('<p> %s - <span style="color: var(--wc-highlight)">%s</span></p>', esc_html($gumroad_product['name']), $update_message);
 
             // SHOW PRODUCTS PAGE LINK
-            if ( $key === array_key_last( $product_list ) ) {
+            end($product_list);
+            $last_key = key($product_list);
+            if ( $key === $last_key ) {
                 $admin_products_page = admin_url('edit.php?post_type=product');
                 echo wp_sprintf('<p>Done! Check out <a href="%s">%s</a></p>', esc_url($admin_products_page), __('Products page', 'uilib-gumpress'));
             }

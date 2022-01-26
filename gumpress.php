@@ -6,7 +6,7 @@
  * Plugin URI: https://ui-lib.com/gumpress
  * Author: UI Lib
  * Author URI: https://ui-lib.com
- * Version: 1.0.0
+ * Version: 1.0.1
  * License: GPL2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: uilib-gumpress

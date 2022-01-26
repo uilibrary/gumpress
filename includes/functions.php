@@ -118,8 +118,12 @@ function ul_sanitize_variants( $variants ) {
 function ul_create_product_attributes( $product_id, $attribute_name, $variants ) {
     $attribute_value = "";
 
+    // GET LAST ITEM IN ARRAY
+    end($variants);
+    $last_variant = key($variants);
+
     foreach ( $variants as $key => $variant ) {
-        if ( $key === array_key_last( $variants ) ) {
+        if ( $key === $last_variant ) {
             $attribute_value .= $variant['name'];
         } else {
             $attribute_value .= $variant['name'] . ' | ';
