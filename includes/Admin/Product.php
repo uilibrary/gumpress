@@ -31,7 +31,8 @@ class Product {
 
         $this->set_base_price( $product_id, ( $args['price'] / 100 ) );
 		$this->set_gumroad_short_url( $product_id, $args['short_url'] );
-		$this->set_product_featured_image( $product_id, $args['name'], $args['preview_url'] );
+        $product_image_url = $args['thumbnail_url'] ? $args['thumbnail_url'] : $args['preview_url'];
+		$this->set_product_featured_image( $product_id, $args['name'], $product_image_url );
 
         return $product_id;
 	}
@@ -56,9 +57,11 @@ class Product {
 
         $this->set_base_price( $product_id, ( $args['price'] / 100 ) );
 		$this->set_gumroad_short_url( $product_id, $args['short_url'] );
-		$this->set_product_featured_image( $product_id,
+        $product_image_url = $args['thumbnail_url'] ? $args['thumbnail_url'] : $args['preview_url'];
+		$this->set_product_featured_image(
+            $product_id,
             $args['name'],
-            $args['preview_url'],
+            $product_image_url,
             true
         );
 

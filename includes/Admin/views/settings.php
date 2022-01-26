@@ -5,7 +5,7 @@
         <table class="form-table">
             <tbody>
                 <tr>
-                    <th>Gumroad access token [<a href="https://help.gumroad.com/article/280-create-application-api#Generatinganaccessto" title="Generating an access token">?</a>]</th>
+                    <th>Gumroad access token [<a href="https://help.gumroad.com/article/280-create-application-api#Generatinganaccessto" title="Generating an access token" target="_blank">?</a>]</th>
                     <td>
                         <input type="text" value="<?php echo esc_attr(get_option('gumroad_http_token')); ?>" placeholder="Gumroad token" name="gumroad-http-token" id="gumroad-http-token" class="regular-text">
                     </td>
