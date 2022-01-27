@@ -71,6 +71,17 @@ final class Gumpress {
     }
 
     /**
+     * Add links to installed plugin page
+     *
+     * @param mixed $actions
+     * @return mixed
+     */
+    public function my_plugin_action_links( $actions ) {
+        $actions[] = '<a href="'. esc_url( get_admin_url(null, 'admin.php?page=uilib-gumpress') ) .'">Settings</a>';
+        return $actions;
+    }
+
+    /**
      * Initialize the plugin
      *
      * @return void
@@ -81,6 +92,9 @@ final class Gumpress {
 
         if (is_admin()) {
             new \UIlib\Gumpress\Admin();
+
+            // Add action link in installed plugin page
+            add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), [$this, 'my_plugin_action_links'] );
         } else {
             // wp_die(';fjdlskfl');
             new \UIlib\Gumpress\Frontend();
