@@ -67,7 +67,7 @@ class Settings {
     public function sync_products() {
         $product        = new Product();
         $gumroad        = new Gumroad();
-        $product_list   = $gumroad->get_product_list();
+        $product_list   = $gumroad->get_published_product_list();
 
         if ( is_wp_error( $product_list ) ) {
             echo "<div class='notice notice-error'>

@@ -10,10 +10,26 @@ class Gumroad {
 	public function __construct() {
     }
 
+    /**
+     * Add authentication token to api endpoint
+     *
+     * @param string $resource_url
+     * @return string
+     */
     public function get_tokenized_url( $resource_url ) {
         $api_url = "https://api.gumroad.com/v2";
         $token = get_option('gumroad_http_token');
         return $api_url . $resource_url . '?access_token=' . $token;
+    }
+
+    /**
+     * Filter published product
+     *
+     * @param mixed $product
+     * @return boolean
+     */
+    public function filter_published_products( $product ) {
+        return $product['published'];
     }
 
     /**
@@ -52,6 +68,21 @@ class Gumroad {
         } else {
             return $data;
         }
+    }
+
+    /**
+     * Get Gumroad product list
+     *
+     * @return array|WP_Error
+     */
+    public function get_published_product_list() {
+        $products = $this->get_product_list();
+
+        if ( is_wp_error( $products ) ) {
+            return $products;
+        }
+
+        return array_filter( $products, [$this, 'filter_published_products'] );
     }
 
     /**
