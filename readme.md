@@ -38,7 +38,7 @@ to Gumroad.
 * 1.0.1
     * removed function array_key_last
 
-### Changelog
- - Only published product
- - Option for opening payment form "wanted=true"
- - Add vatiation select
+### Roadmap
+ - Only published product [*]
+ - Option for opening payment form "wanted=true" [*]
+ - Add vatiation select [*]

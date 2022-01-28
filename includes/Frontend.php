@@ -33,7 +33,15 @@ class Frontend {
      * @return void
      */
     public function modify_add_to_cart_button($quantity, $product) {
-        $url = get_post_meta($product->id, 'gumroad_product_url', true);
-        return '<a href="' . esc_url($url) . '/?wanted=true" class="gumpress-button button add_to_cart_button">' . __('Buy now', 'uilib-gumpress') . '</a>';
+        if ( $product->is_type('variable') ) {
+            $url = $product->get_permalink();
+            return '<a href="' . esc_url($url) . '" class="gumpress-button button add_to_cart_button">' . __('Select options', 'uilib-gumpress') . '</a>';
+        } else {
+            $url = get_post_meta($product->id, 'gumroad_product_url', true);
+            return '<a href="' . esc_url($url) . '/?wanted=true" class="gumpress-button button add_to_cart_button">' . __('Buy now', 'uilib-gumpress') . '</a>';
+
+        }
+
+
     }
 }
