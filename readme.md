@@ -37,8 +37,9 @@ to Gumroad.
     * Initial release
 * 1.0.1
     * removed function array_key_last
-
-### Roadmap
- - Only published product [*]
- - Option for opening payment form "wanted=true" [*]
- - Add vatiation select [*]
+* 1.1.0
+    * updated: thumbnail upload
+    * added: plugin action link
+    * fixed: import only published
+    * added: variation select
+    * updated: variable product button
