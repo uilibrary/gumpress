@@ -43,3 +43,10 @@ to Gumroad.
     * fixed: import only published
     * added: variation select
     * updated: variable product button
+
+### Roadmap
+* Out of stok prodcut
+* Affiliated products going to external page
+* Same product order as Gumroad
+* Additional information/ Versions
+* Option for overriding the woocommerce product data(Title, Description, etc). So that user can choose which field should be overridden and which not

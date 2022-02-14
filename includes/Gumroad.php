@@ -51,7 +51,7 @@ class Gumroad {
         } elseif ( $status_code === 401 ) {
             return new \WP_Error('gumroad-unathorized', __('Invalid token!', 'uilib-gumpress'));
         } else {
-            return new \WP_Error('gumroad-error', __('Error while getting data from Gumroad!!', 'uilib-gumpress'));
+            return new \WP_Error('gumroad-error', __('Error while getting data from Gumroad! Error code '.$status_code, 'uilib-gumpress'));
         }
     }
 
