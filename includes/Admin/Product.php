@@ -45,15 +45,23 @@ class Product {
      * @return int|WP_Error
      */
     public function update_product( $product_id, $args ) {
-        $product_id = wp_update_post(
-			array(
-                'ID'           => $product_id,
-				'post_title'   => $args['name'],
-				'post_type'    => 'product',
-				'post_status'  => 'publish',
-				'post_content' => $args['description'],
-			)
-		);
+
+        $post_data = array(
+            'ID'           => $product_id,
+            'post_type'    => 'product',
+            'post_status'  => 'publish'
+        );
+
+        // IF TITLE RESET IS TRUE
+        if(get_option('gp_reset_title')) {
+            $post_data['post_title'] = $args['name'];
+        }
+        // IF DESCRIPTION RESET IS TRUE
+        if(get_option('gp_reset_description')) {
+            $post_data['post_content'] = $args['description'];
+        }
+
+        $product_id = wp_update_post( $post_data );
 
         $this->set_base_price( $product_id, ( $args['price'] / 100 ) );
 		$this->set_gumroad_short_url( $product_id, $args['short_url'] );

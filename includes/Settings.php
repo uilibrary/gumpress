@@ -51,7 +51,12 @@ class Settings {
         }
 
         $token = isset( $_POST['gumroad-http-token'] ) ? sanitize_text_field( $_POST['gumroad-http-token'] ) : '';
+        $reset_description = isset( $_POST['gp-reset-description']);
+        $reset_title = isset( $_POST['gp-reset-title']);
+
         update_option('gumroad_http_token', $token);
+        update_option('gp_reset_description', $reset_description);
+        update_option('gp_reset_title', $reset_title);
 
         $redirected_to = admin_url( 'admin.php?page=uilib-gumpress&saved=true' );
 

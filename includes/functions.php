@@ -17,6 +17,17 @@ if ( ! function_exists( 'is_woocommerce_activated' ) ) {
 	}
 }
 
+function has_gumroad_products() {
+    global $wpdb;
+    $result = $wpdb->get_results("SELECT product_id from `{$wpdb->prefix}gumroad_product_relationships` WHERE `product_id` IS NOT NULL");
+
+    if( count($result) == 0 ) {
+        return false;
+    } else {
+       return true;
+    }
+}
+
 /**
  * Insert/Update a row of relationship of gumroad and woocommerce products
  *
