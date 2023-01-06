@@ -47,6 +47,8 @@ to Gumroad.
     * added: error code to error message
 * 1.2.0
     * added: Product title, description reset options
+* 1.2.1
+    * fixed: Open overlay issue
 
 ### Roadmap
 * Out of stok prodcut

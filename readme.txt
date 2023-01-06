@@ -2,8 +2,8 @@
 Contributors: uilib
 Tags: gumroad, gumroad store, gumroad checkout, woocommerce
 Requires at least: 4.7
-Tested up to: 5.8
-Stable tag: 1.2.0
+Tested up to: 6.1.1
+Stable tag: 1.2.1
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -13,6 +13,9 @@ Sync and checkout with Gumroad for personalized Gumroad storefront.
 == Description ==
 
 Gumpress is a woocommerce extension that allows you to import Gumroad products into your woocommerce store. It allows you to create a personalized gumroad storefront using any woocommerce theme.
+
+## How to use?
+[youtube https://www.youtube.com/watch?v=tmzzT0v1joc]
 
 [Demo website](https://gumpress.io/demo1/)
 
@@ -83,8 +86,11 @@ Yes, you can use any woocommerce theme.
 * added: variation select
 * updated: variable product button
 
+= 1.1.1 =
+* added: error code to error message
+
 = 1.2.0 =
 * added: Product title, description reset options
 
-= 1.1.1 =
-* added: error code to error message
+= 1.2.1 =
+* fixed: Open overlay issue

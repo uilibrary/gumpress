@@ -2,11 +2,11 @@
 
 /**
  * Plugin Name: Gumpress
- * Description: Sell Gumroad product on WooCommerce
+ * Description: Sell Gumroad product using WooCommerce
  * Plugin URI: https://ui-lib.com/gumpress
  * Author: UI Lib
  * Author URI: https://ui-lib.com
- * Version: 1.2.0
+ * Version: 1.2.1
  * License: GPL2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: uilib-gumpress
